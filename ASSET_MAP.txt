@@ -1,0 +1,14 @@
+BETONCHI – CLEAR CHARACTER ASSETS
+Her PNG ayrı 1600×1600 sayfadır.
+
+01_beton_normal.png     → Ana ekran
+02_beton_mutlu.png      → Mutlu durum
+03_beton_yemek.png      → Yemek ekranı
+04_beton_uyku.png       → Dinlenme / uyku
+05_beton_prova.png      → Prova
+06_beton_konser.png     → Konser
+07_beton_mesaj.png      → Mesaj
+08_beton_uzgun.png      → Üzgün / özledi
+09_beton_kombin_1.png   → Classic
+10_beton_kombin_2.png   → Stage / deri
+11_beton_kombin_3.png   → Casual / hoodie
