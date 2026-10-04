@@ -1,0 +1,11 @@
+let s=JSON.parse(localStorage.getItem('bc4')||'{"happy":82,"energy":68,"ready":45,"food":"Pizza","top":"Basic Tee","bottom":"Baggy Jean","acc":"Yok"}');function save(){localStorage.setItem('bc4',JSON.stringify(s))}
+function syncHome(){h.style.width=s.happy+'%';e.style.width=s.energy+'%';r.style.width=s.ready+'%';look.textContent=[s.top,s.bottom,s.acc].filter(x=>x!='Yok').join(' · ')}
+let chosen=s.food;const foods=[['🍕','Pizza','Favorisi · +12 mutluluk'],['🍝','Makarna','+10 enerji'],['🥐','Kruvasan','+7 mutluluk'],['🥗','Salata','+6 enerji'],['🍜','Noodle','+8 enerji'],['🍰','Pasta','+10 mutluluk']];
+function renderFood(){foodGrid.innerHTML=foods.map(x=>`<div class="choice ${chosen==x[1]?'on':''}" onclick="chosen='${x[1]}';renderFood()"><div class="food">${x[0]}</div><b>${x[1]}</b><br><small>${x[2]}</small></div>`).join('')}
+function feed(){s.food=chosen;if(chosen=='Pizza')s.happy=Math.min(100,s.happy+12);else s.energy=Math.min(100,s.energy+10);save();location='index.html'}
+const sets={tops:['Basic Tee','Deri Ceket','Sahne Gömleği','Oversize Hoodie'],bottoms:['Baggy Jean','Siyah Pantolon','Cargo','Şort'],accs:['Yok','Gözlük','Zincir','Bere']};
+function row(id,key){document.getElementById(id).innerHTML=sets[id].map(v=>`<button class="chip ${s[key]==v?'on':''}" onclick="s.${key}='${v}';renderWardrobe()">${v}</button>`).join('')}
+function renderWardrobe(){row('tops','top');row('bottoms','bottom');row('accs','acc');lookPreview.textContent=[s.top,s.bottom,s.acc].filter(x=>x!='Yok').join(' · ')}
+function saveLook(){save();location='index.html'}
+function specialInit(f){let t={ 'practice.html':'Bir prova daha, sonra sahne.','rest.html':'Şu an biraz sessizlik iyi gelir.','concert.html':'Hazırlık %'+s.ready+' · '+(s.ready>=80?'Sahneye hazırım!':'Biraz daha prova.'),'message.html':'“Beni besledin mi? Kombinimi de unutma.”'};specialBubble.textContent=t[f]}
+function special(f){if(f=='practice.html'){s.ready=Math.min(100,s.ready+15);s.energy=Math.max(0,s.energy-8);save();specialInit(f)}else if(f=='rest.html'){s.energy=Math.min(100,s.energy+18);save();specialBubble.textContent='Tamamdır. Enerjim '+s.energy+'% 😌'}else if(f=='concert.html'){specialInit(f)}else{specialBubble.textContent=['“Bugün deri ceket havasındayım.”','“Pizza varsa ben varım.”','“Prova yapmadan sahne yok.”'][Math.floor(Math.random()*3)]}}
