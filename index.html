@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17131f"><link rel="manifest" href="manifest.json">
+<title>BETONCHI</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="phone">
+<header><div><small>YOUR VIRTUAL BAND BABY</small><h1>BETONCHI ✦</h1></div><button id="reset">↻</button></header>
+<section class="stats">
+ <div>♥ Mutluluk <b id="happy">78</b><i><span id="happybar"></span></i></div>
+ <div>⚡ Enerji <b id="energy">72</b><i><span id="energybar"></span></i></div>
+ <div>♫ Hazırlık <b id="ready">54</b><i><span id="readybar"></span></i></div>
+</section>
+<main>
+ <section id="home" class="page active">
+  <div class="hero"><img src="assets/betonchi-art.png" alt="Beton"><div class="bubble" id="bubble">Bugün ne yapıyoruz? ♡</div></div>
+  <h2>Beton'la ilgilen</h2>
+  <div class="grid">
+   <button data-go="food">🍝<span>Yemek ver</span></button><button data-go="outfit">👕<span>Kombin</span></button>
+   <button data-action="rehearse">🎸<span>Prova</span></button><button data-action="rest">🌙<span>Dinlen</span></button>
+  </div>
+ </section>
+ <section id="food" class="page"><h2>Beton ne yesin?</h2><p class="sub">Birini seç — enerjisi gerçekten değişsin.</p><div class="choices">
+  <button data-food="Makarna" data-e="16">🍝 Makarna</button><button data-food="Pizza" data-e="13">🍕 Pizza</button><button data-food="Tatlı" data-e="8">🍰 Tatlı</button><button data-food="Kahve" data-e="10">☕ Kahve</button>
+ </div></section>
+ <section id="outfit" class="page"><h2>Bugünün kombini</h2><p class="sub">Az ama iyi: 4 sahne görünümü.</p>
+  <div class="doll" id="doll"><div class="head">〰️<br>◕‿◕</div><div class="shirt" id="shirt">BLACK TEE</div><div class="pants" id="pants">WIDE PANTS</div><div class="shoes">◢　◣</div></div>
+  <div class="outfits"><button data-look="0">🖤 Classic</button><button data-look="1">🎤 Stage</button><button data-look="2">🧥 Leather</button><button data-look="3">✨ Soft</button></div>
+ </section>
+ <section id="concert" class="page"><div class="stage"><h2>CONCERT MODE</h2><div class="spot">🎸</div><p id="concertText">Hazırlık %70 olunca konser başlayabilir.</p><button id="perform">KONSERİ BAŞLAT</button></div></section>
+ <section id="messages" class="page"><h2>Beton'dan mesaj 💌</h2><div class="chat"><p>Bugün harika gidiyorsun! 💙</p><p id="dynamicMsg">Biraz prova yapalım mı?</p></div></section>
+</main>
+<nav><button data-go="home">⌂<span>Ana</span></button><button data-go="food">🍴<span>Yemek</span></button><button data-go="outfit">♙<span>Kombin</span></button><button data-go="concert">★<span>Konser</span></button><button data-go="messages">♡<span>Beton</span></button></nav>
+</div><script src="app.js"></script>
+</body></html>
