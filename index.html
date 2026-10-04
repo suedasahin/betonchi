@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#F8F4EC">
+  <title>BETONCHI</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">VIRTUAL BAND BABY</div>
+      <div class="logo">BETONCHI<span>✦</span></div>
+    </div>
+    <div class="heart">♡</div>
+  </header>
+
+  <main>
+    <section class="screen active" id="home">
+      <div class="character-card mood-happy">
+        <div class="status-pill" id="statusPill">MUTLU</div>
+        <img class="character" id="homeCharacter" src="assets/beton-original.png" alt="Beton">
+        <div class="speech" id="speech">Bugün ne yapıyoruz?</div>
+      </div>
+      <div class="meters">
+        <div><span>Mutluluk</span><b id="happyText">82%</b><i><em id="happyBar"></em></i></div>
+        <div><span>Enerji</span><b id="energyText">76%</b><i><em id="energyBar"></em></i></div>
+        <div><span>Hazırlık</span><b id="readyText">48%</b><i><em id="readyBar"></em></i></div>
+      </div>
+      <div class="quick-actions">
+        <button data-nav="food"><strong>🍝</strong><span>Yemek ver</span></button>
+        <button data-nav="outfit"><strong>👕</strong><span>Kombin</span></button>
+        <button id="rehearse"><strong>🎸</strong><span>Prova</span></button>
+        <button id="sleep"><strong>☾</strong><span>Dinlen</span></button>
+      </div>
+    </section>
+
+    <section class="screen" id="food">
+      <div class="screen-title"><button class="back" data-nav="home">‹</button><div><h2>Yemek</h2><p>Beton bugün ne yesin?</p></div></div>
+      <div class="character-card food-scene">
+        <div class="emoji-prop" id="foodProp">🍝</div>
+        <img class="character" src="assets/beton-original.png" alt="Beton yemek ekranı">
+        <div class="speech" id="foodSpeech">Bir şey seç, ben hazırım.</div>
+      </div>
+      <div class="selector four">
+        <button data-food="Makarna" data-icon="🍝">🍝<span>Makarna</span></button>
+        <button data-food="Pizza" data-icon="🍕">🍕<span>Pizza</span></button>
+        <button data-food="Tatlı" data-icon="🍰">🍰<span>Tatlı</span></button>
+        <button data-food="Kahve" data-icon="☕">☕<span>Kahve</span></button>
+      </div>
+      <button class="primary" id="feedButton">Beton'a ver</button>
+    </section>
+
+    <section class="screen" id="outfit">
+      <div class="screen-title"><button class="back" data-nav="home">‹</button><div><h2>Kombin</h2><p>Az seçenek, net görünüm.</p></div></div>
+      <div class="avatar-stage">
+        <div class="baby-avatar">
+          <div class="hair">〰〰〰</div>
+          <div class="face">•ᴗ•</div>
+          <div class="torso" id="torso">BLACK TEE</div>
+          <div class="legs" id="legs">WIDE PANTS</div>
+          <div class="feet">◢　◣</div>
+        </div>
+        <div class="look-name" id="lookName">Classic Beton</div>
+      </div>
+      <div class="outfit-list">
+        <button class="look selected" data-look="classic"><span class="swatch black"></span><b>Classic</b><small>Siyah tişört + gri pantolon</small></button>
+        <button class="look" data-look="stage"><span class="swatch wine"></span><b>Stage</b><small>Bordo üst + siyah pantolon</small></button>
+        <button class="look" data-look="leather"><span class="swatch leather"></span><b>Leather</b><small>Koyu ceket + koyu pantolon</small></button>
+      </div>
+    </section>
+
+    <section class="screen" id="concert">
+      <div class="screen-title"><button class="back" data-nav="home">‹</button><div><h2>Konser</h2><p>Hazır olduğunda sahne senin.</p></div></div>
+      <div class="character-card concert-scene">
+        <div class="lights">✦　✧　✦</div>
+        <img class="character" src="assets/beton-original.png" alt="Beton konser ekranı">
+        <div class="speech" id="concertSpeech">Biraz daha prova yapalım mı?</div>
+      </div>
+      <div class="concert-progress"><span>Konser hazırlığı</span><b id="concertReady">48%</b><i><em id="concertBar"></em></i></div>
+      <button class="primary" id="concertButton">Konseri başlat</button>
+    </section>
+
+    <section class="screen" id="messages">
+      <div class="screen-title"><button class="back" data-nav="home">‹</button><div><h2>Beton</h2><p>Bugünün küçük mesajı.</p></div></div>
+      <div class="character-card message-scene">
+        <img class="character" src="assets/beton-original.png" alt="Beton mesaj ekranı">
+      </div>
+      <div class="message-card">
+        <small>BETON • ŞİMDİ</small>
+        <p id="messageText">Bugün sizinle takılmak iyi geldi ♡</p>
+      </div>
+      <button class="secondary" id="newMessage">Başka mesaj</button>
+    </section>
+  </main>
+
+  <nav class="tabbar">
+    <button class="active" data-nav="home"><b>⌂</b><span>Ana</span></button>
+    <button data-nav="food"><b>🍴</b><span>Yemek</span></button>
+    <button data-nav="outfit"><b>♙</b><span>Kombin</span></button>
+    <button data-nav="concert"><b>★</b><span>Konser</span></button>
+    <button data-nav="messages"><b>♡</b><span>Beton</span></button>
+  </nav>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
